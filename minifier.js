@@ -46,6 +46,7 @@ function setup(opts) {
 module.exports = function (opts, uglify) {
   function minify(file, encoding, callback) {
     var options = setup(opts || {});
+    console.log("Minifying:", "..." + file.path.slice(file.path.lastIndexOf("/", file.path.length - (file.path.length - file.path.lastIndexOf("/") + 1))))
 
     if (file.isNull()) {
       return callback(null, file);
